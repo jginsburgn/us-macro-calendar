@@ -190,25 +190,34 @@ def normalize_bls_events_to_utc(events):
 def scrape_fomc_events():
     """
     Scrape FOMC meeting dates from the Fed's official calendar page.
-    We:
+    Dynamically detects all 'YYYY FOMC Meetings' sections instead of using
+    a hard-coded year list.
+
+    Steps:
       - fetch the page
-      - flatten to text
-      - find year blocks like '2025 FOMC Meetings', '2026 FOMC Meetings'
-      - within each block, find patterns: 'Month  DD-DD' (optional '*')
+      - detect all year headers like '2026 FOMC Meetings'
+      - for each year section, find patterns: 'Month  DD-DD' (optional '*')
       - use the SECOND day as the policy decision date
-      - make all-day events for those dates, only if >= NOW.
-      - deduplicate meeting dates in case the pattern appears twice.
+      - make all-day events for those dates, only if >= NOW
+      - deduplicate meeting dates in case the pattern appears more than once
     """
     resp = requests.get(FOMC_URL, timeout=30)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
     text = soup.get_text("\n")
 
-    events = []
     now_str = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
 
-    # Years to scan for FOMC meetings; tweak as needed.
-    years_to_scan = [2025, 2026, 2027]
+    # 1) Find all 'YYYY FOMC Meetings' headers dynamically
+    year_header_re = re.compile(r"(\d{4}) FOMC Meetings")
+    year_matches = list(year_header_re.finditer(text))
+
+    # Extract years and keep them sorted & unique
+    years_to_scan = sorted({int(m.group(1)) for m in year_matches})
+
+    # Optionally, only scan years from "now on" to avoid ancient data
+    current_year = datetime.now(timezone.utc).year
+    years_to_scan = [y for y in years_to_scan if y >= current_year]
 
     # Precompile month+day-range pattern, e.g. "January 27-28*"
     month_pattern = (
@@ -218,6 +227,7 @@ def scrape_fomc_events():
     )
     month_re = re.compile(month_pattern)
 
+    events = []
     seen_dates = set()  # YYYYMMDD strings to avoid duplicates
 
     for year in years_to_scan:
@@ -253,7 +263,7 @@ def scrape_fomc_events():
 
             date_key = dt.strftime("%Y%m%d")
             if date_key in seen_dates:
-                # Avoid duplicates (e.g. if pattern appears twice in the text)
+                # Avoid duplicates (e.g., if pattern appears twice in the text)
                 continue
             seen_dates.add(date_key)
 
