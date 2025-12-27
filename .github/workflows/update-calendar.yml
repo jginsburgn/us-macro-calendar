@@ -6,6 +6,9 @@ on:
     - cron: "0 7 * * *"
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -37,4 +40,6 @@ jobs:
             git add us_macro.ics
             git commit -m "Update macro calendar"
             git push
+          else
+            echo "No changes to commit"
           fi
