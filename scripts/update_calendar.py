@@ -2,11 +2,11 @@ import re
 import requests
 from datetime import datetime, timezone
 from bs4 import BeautifulSoup
+import pytz
 
 # --- Sources ---
 
 BLS_URL = "https://www.bls.gov/schedule/news_release/bls.ics"
-# BEA ICS link – if this ever changes, update here.
 BEA_URL = "https://www.bea.gov/news/schedule/ics/online-calendar-subscription.ics"
 FOMC_URL = "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
 
@@ -36,10 +36,13 @@ MONTH_MAP = {
     "December": 12,
 }
 
+EASTERN = pytz.timezone("US/Eastern")
+
 
 # ---------- Helpers for ICS parsing (BLS/BEA) ----------
 
 def fetch_lines(url: str):
+    # User-Agent to avoid 403s from BLS/BEA
     headers = {
         "User-Agent": (
             "Mozilla/5.0 (X11; Linux x86_64) "
@@ -55,10 +58,11 @@ def fetch_lines(url: str):
 
 def parse_dtstart(line: str):
     """
-    Parses a DTSTART line into a datetime in UTC.
+    Parses a DTSTART line into a datetime in UTC (best effort).
     Handles:
       DTSTART;VALUE=DATE-TIME:20250107T133000Z
       DTSTART;VALUE=DATE:20260128
+      DTSTART;TZID=US-Eastern:20260109T083000
       DTSTART:20250425T180000Z
     """
     if ":" not in line:
@@ -66,15 +70,19 @@ def parse_dtstart(line: str):
     value = line.split(":", 1)[1].strip()
     try:
         if "T" in value:
+            # Has time
             if value.endswith("Z"):
                 dt = datetime.strptime(value, "%Y%m%dT%H%M%SZ").replace(
                     tzinfo=timezone.utc
                 )
             else:
+                # Treat as naive UTC here (we only use it for >= NOW filtering);
+                # timezone-specific normalization happens later where needed.
                 dt = datetime.strptime(value, "%Y%m%dT%H%M%S").replace(
                     tzinfo=timezone.utc
                 )
         else:
+            # Date only
             dt = datetime.strptime(value, "%Y%m%d").replace(tzinfo=timezone.utc)
         return dt
     except Exception:
@@ -136,6 +144,47 @@ def filter_events(lines, source_tag):
     return events
 
 
+def normalize_bls_events_to_utc(events):
+    """
+    For events sourced from BLS, convert any
+    DTSTART;TZID=US-Eastern:YYYYMMDDTHHMMSS
+    to plain UTC like:
+    DTSTART:YYYYMMDDTHHMMSSZ
+
+    We don't touch all-day VALUE=DATE events.
+    """
+    normalized = []
+    for ev in events:
+        new_ev = []
+        for line in ev:
+            if line.startswith("DTSTART;TZID=US-Eastern:"):
+                val = line.split(":", 1)[1].strip()
+                # BLS uses times like 20260109T083000
+                try:
+                    local_naive = datetime.strptime(val, "%Y%m%dT%H%M%S")
+                    local_dt = EASTERN.localize(local_naive)
+                    utc_dt = local_dt.astimezone(timezone.utc)
+                    new_line = "DTSTART:" + utc_dt.strftime("%Y%m%dT%H%M%SZ")
+                    new_ev.append(new_line)
+                except Exception:
+                    # Fall back to original line if parsing fails
+                    new_ev.append(line)
+            elif line.startswith("DTEND;TZID=US-Eastern:"):
+                val = line.split(":", 1)[1].strip()
+                try:
+                    local_naive = datetime.strptime(val, "%Y%m%dT%H%M%S")
+                    local_dt = EASTERN.localize(local_naive)
+                    utc_dt = local_dt.astimezone(timezone.utc)
+                    new_line = "DTEND:" + utc_dt.strftime("%Y%m%dT%H%M%SZ")
+                    new_ev.append(new_line)
+                except Exception:
+                    new_ev.append(line)
+            else:
+                new_ev.append(line)
+        normalized.append(new_ev)
+    return normalized
+
+
 # ---------- Scraping Fed FOMC page ----------
 
 def scrape_fomc_events():
@@ -148,28 +197,28 @@ def scrape_fomc_events():
       - within each block, find patterns: 'Month  DD-DD' (optional '*')
       - use the SECOND day as the policy decision date
       - make all-day events for those dates, only if >= NOW.
+      - deduplicate meeting dates in case the pattern appears twice.
     """
     resp = requests.get(FOMC_URL, timeout=30)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
     text = soup.get_text("\n")
 
-    # For safety, normalize multiple spaces/newlines
-    # but keep enough structure for regex to work.
-    # We'll search per-year blocks.
     events = []
     now_str = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
 
-    # We'll cover current and near-future years; tweak as you like.
+    # Years to scan for FOMC meetings; tweak as needed.
     years_to_scan = [2025, 2026, 2027]
 
-    # Precompile month+day-range pattern
+    # Precompile month+day-range pattern, e.g. "January 27-28*"
     month_pattern = (
         r"(January|February|March|April|May|June|July|August|September|October|November|December)"
-        r"[^\d]{0,20}"          # some whitespace or punctuation between month and numbers
+        r"[^\d]{0,20}"
         r"(\d{1,2})-(\d{1,2})\*?"  # start-end, optional '*'
     )
     month_re = re.compile(month_pattern)
+
+    seen_dates = set()  # YYYYMMDD strings to avoid duplicates
 
     for year in years_to_scan:
         header = f"{year} FOMC Meetings"
@@ -177,9 +226,7 @@ def scrape_fomc_events():
         if idx == -1:
             continue
 
-        # Find the start of the NEXT year header to bound the section
-        # e.g., '2026 FOMC Meetings', etc.
-        # If not found, go to end of text.
+        # Bound this section by the next year's header or end of text
         end_idx = len(text)
         for other_year in years_to_scan:
             if other_year <= year:
@@ -192,25 +239,30 @@ def scrape_fomc_events():
         section = text[idx:end_idx]
 
         for m in month_re.finditer(section):
-            month_name, day1_str, day2_str = m.groups()
+            month_name, _day1_str, day2_str = m.groups()
             month = MONTH_MAP[month_name]
             day2 = int(day2_str)
 
             try:
                 dt = datetime(year, month, day2, tzinfo=timezone.utc)
             except ValueError:
-                # If for some reason the date is malformed, skip
                 continue
 
             if dt < NOW:
                 continue
 
-            uid = f"FOMC-{dt.strftime('%Y%m%d')}@us-macro"
+            date_key = dt.strftime("%Y%m%d")
+            if date_key in seen_dates:
+                # Avoid duplicates (e.g. if pattern appears twice in the text)
+                continue
+            seen_dates.add(date_key)
+
+            uid = f"FOMC-{date_key}@us-macro"
             ev = [
                 "BEGIN:VEVENT",
                 f"UID:{uid}",
                 f"DTSTAMP:{now_str}",
-                f"DTSTART;VALUE=DATE:{dt.strftime('%Y%m%d')}",
+                f"DTSTART;VALUE=DATE:{date_key}",
                 "SUMMARY:FOMC Meeting – Rate Decision",
                 "DESCRIPTION:Federal Open Market Committee meeting "
                 "(second day, policy statement expected). "
@@ -231,6 +283,9 @@ def main():
 
     bls_events = filter_events(bls_lines, "BLS")
     bea_events = filter_events(bea_lines, "BEA")
+
+    # Normalize BLS events so DTSTART is UTC, no TZID=US-Eastern
+    bls_events = normalize_bls_events_to_utc(bls_events)
 
     # Fed FOMC meetings scraped live
     fomc_events = scrape_fomc_events()

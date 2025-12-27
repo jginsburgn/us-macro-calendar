@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install requests beautifulsoup4
+          pip install requests beautifulsoup4 pytz
 
       - name: Update calendar
         run: python scripts/update_calendar.py
