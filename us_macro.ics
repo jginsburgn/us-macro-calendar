@@ -460,6 +460,16 @@ DESCRIPTION:www.bea.gov
   (Source: BEA)
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:Personal Income and Outlays\, October and November 2025
+DTSTART:20260122T150000Z
+DURATION:PT30M
+DTSTAMP:20260108T132954Z
+UID:b318006e-77ab-42d3-8831-7650e3f13c10
+SEQUENCE:3
+DESCRIPTION:www.bea.gov
+  (Source: BEA)
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:Gross Domestic Product by State and Personal Income by State\, 3rd
   quarter 2025
 DTSTART:20260123T133000Z
@@ -467,16 +477,6 @@ DURATION:PT30M
 DTSTAMP:20251210T184951Z
 UID:3aabd18d-cf80-4bd6-a0a3-bdaea138b71b
 SEQUENCE:3
-DESCRIPTION:www.bea.gov
-  (Source: BEA)
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Personal Income and Outlays\, December 2025
-DTSTART:20260129T133000Z
-DURATION:PT30M
-DTSTAMP:20250929T114611Z
-UID:93baf91d-3037-48e3-9f86-cafd43a8327c
-SEQUENCE:0
 DESCRIPTION:www.bea.gov
   (Source: BEA)
 END:VEVENT
@@ -492,12 +492,22 @@ DESCRIPTION:www.bea.gov
   (Source: BEA)
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Personal Income and Outlays\, January 2026
+SUMMARY:Personal Income and Outlays\, December 2025
+DTSTART:20260220T133000Z
+DURATION:PT30M
+DTSTAMP:20260108T132954Z
+UID:93baf91d-3037-48e3-9f86-cafd43a8327c
+SEQUENCE:1
+DESCRIPTION:www.bea.gov
+  (Source: BEA)
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:To Be Rescheduled: Personal Income and Outlays\, January 2026
 DTSTART:20260226T133000Z
 DURATION:PT30M
-DTSTAMP:20250929T114611Z
+DTSTAMP:20260108T132954Z
 UID:f4e6c58a-5d3a-47b9-8334-386dc1c5df86
-SEQUENCE:0
+SEQUENCE:1
 DESCRIPTION:www.bea.gov
   (Source: BEA)
 END:VEVENT
@@ -603,406 +613,406 @@ DESCRIPTION:www.bea.gov
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260128@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260128
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260318@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260318
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260429@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260429
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260617@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260617
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260729@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260729
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260916@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260916
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20261028@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20261028
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20261209@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20261209
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260129@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260129
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260319@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260319
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260507@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260507
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260618@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260618
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260730@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260730
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260917@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260917
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20261029@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20261029
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20261210@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20261210
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260131@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260131
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260320@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260320
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260501@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260501
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260612@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260612
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260731@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260731
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260918@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260918
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20261107@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20261107
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20261218@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20261218
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260322@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260322
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260503@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260503
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260614@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260614
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260726@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260726
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260920@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260920
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20261213@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20261213
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260126@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260126
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260316@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260316
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260504@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260504
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260615@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260615
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260727@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260727
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260921@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260921
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20261102@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20261102
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20261214@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20261214
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260127@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260127
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260317@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260317
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260428@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260428
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260616@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260616
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260728@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260728
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260922@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260922
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20261103@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20261103
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20261215@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20261215
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20260610@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20260610
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20261105@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20261105
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20261216@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20261216
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2026)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20270127@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20270127
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2027)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20270317@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20270317
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2027)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20270428@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20270428
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2027)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20270609@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20270609
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2027)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20270728@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20270728
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2027)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20270915@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20270915
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2027)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20271027@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20271027
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2027)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20271208@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20271208
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2027)
 END:VEVENT
 BEGIN:VEVENT
 UID:FOMC-20270126@us-macro
-DTSTAMP:20260108T071624Z
+DTSTAMP:20260109T071714Z
 DTSTART;VALUE=DATE:20270126
 SUMMARY:FOMC Meeting – Rate Decision
 DESCRIPTION:Federal Open Market Committee meeting (second day, policy statement expected). (Source: Federal Reserve FOMC calendar, 2027)
